@@ -11,52 +11,64 @@
 		<section>
 			<a class="button" href="form.php">Registrarse como jugador</a>
 		</section>
+<?php 
+$dbconn = pg_connect("host=localhost port=5432 dbname=postgres user=postgres password=example") or die('Could not connect: ' . pg_last_error());
+
+// Performing SQL query
+$query = 'SELECT * FROM ATable';
+$query2 = 'create table ATable(
+	codigo 				integer,
+	nombre 				varchar(30),
+	fecha			 	date,
+	valor	 			integer,
+	constraint PK_COD primary key (codigo),
+	constraint FK_COD foreign  key (codigo) references BTable
+	);';
+
+$query3 = 'create table BTable(
+	codigo				integer,
+	valor	 			varchar(20),
+	constraint PK_COD2 primary key (codigo)
+	);';
+
+$query4 ='insert into BTable values( 0 , \'Volo\', \'17/3/1999\',0);';
+
+$query5 ='insert into DTable values(0, \'Normal\');';
+
+
+$result = pg_query($query3) or die('Query failed: ' . pg_last_error());
+$result = pg_query($query2) or die('Query failed: ' . pg_last_error());
+$result = pg_query($query5) or die('Query failed: ' . pg_last_error());
+$result = pg_query($query4) or die('Query failed: ' . pg_last_error());
+$result = pg_query($query) or die('Query failed: ' . pg_last_error());
+
+echo "<table>\n";
+while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
+    echo "\t<tr>\n";
+    foreach ($line as $col_value) {
+        echo "\t\t<td>$col_value</td>\n";
+    }
+    echo "\t</tr>\n";
+}
+echo "</table>\n";
+
+// Free resultset
+pg_free_result($result);
+
+// Closing connection
+pg_close($dbconn);
+
+
+?>
 		<section>
 			<ul>
-				<?php
-					$StringBirth;
-					$PresentDay;
-					$myfile = fopen("Usuarios.txt", "r") or die("Unable to open file!");
-					fgets($myfile);//saltar separador
-					while(!feof($myfile)){
-						echo '<li class="USUARIO">';
-
-							$nombre=fgets($myfile);//conseguir nombre
-							$apellidos=fgets($myfile);//conseguir apppelidos
-							echo '<a href="juego.php?nom='.$nombre.'&ape='.$apellidos.'">';
-
-							echo $nombre;//ver nombre
-
-
-								echo '</a><ul><li>';
-
-
-									echo $apellidos; //ver apellidos
-									fgets($myfile);//saltar correo
-
-
-									echo '</li><li>';
-
-
-									$StringBirth=fgets($myfile);//guardar fecha
-									$PresentDay=date("Y-m-d");
-									$dif = (int)substr($PresentDay,0,4)-(int)substr($StringBirth,0,4);
-									if ((int)substr($PresentDay,5,2)>=(int)substr($StringBirth,5,2)){
-										if (!(int)substr($PresentDay,8)>=(int)substr($StringBirth,8))
-											$dif-=1;
-									}else
-										$dif-=1;
-
-									echo $dif ;//poner edad
-
-							fgets($myfile);//saltar partidas jugadas
-							fgets($myfile);//saltar partidas ganadas
-							fgets($myfile);//saltar linea
-
-						echo'</li></ul></li>';
-					}
-					fclose($myfile);
-				?>
+				<li class="USUARIO">
+					<a href="#">Hola mundo</a>
+					<ul>
+						<li></li>
+						<li></li>
+					</ul>
+				</li>
 			</ul>
         </section>
 		<section>
