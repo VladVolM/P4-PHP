@@ -11,7 +11,7 @@
 		<section>
 			<a class="button" href="form.php">Registrarse como jugador</a>
 		</section>
-<?php 
+<?php /*
 $dbconn = pg_connect("host=localhost port=5432 dbname=postgres user=postgres password=example") or die('Could not connect: ' . pg_last_error());
 
 // Performing SQL query
@@ -58,21 +58,42 @@ pg_free_result($result);
 // Closing connection
 pg_close($dbconn);
 
-
+*/
 ?>
 		<section>
 			<ul>
 				<li class="USUARIO">
-					<a href="#">Hola mundo</a>
+					Bootstrap
 					<ul>
-						<li></li>
-						<li></li>
+						<li><a href="https://getbootstrap.com/">https://getbootstrap.com/</a></li>
+						<li><a href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp">https://www.w3schools.com/bootstrap/bootstrap_ver.asp</a></li>
+					</ul>
+				</li>
+				<li class="USUARIO">
+					Jquery
+					<ul>
+						<li><a href="https://www.w3schools.com/jquery/default.asp">https://www.w3schools.com/jquery/default.asp</a></li>
+					</ul>
+				</li>
+				<li class="USUARIO">
+					Json
+					<ul>
+						<li><a href="https://ejemplocodigo.com/ejemplo-php-crear-y-leer-json-de-una-tabla-mysql/">https://ejemplocodigo.com/ejemplo-php-crear-y-leer-json-de-una-tabla-mysql/</a></li>
+					</ul>
+				</li>
+				<li class="USUARIO">
+					Json externo
+					<ul>
+						<li><a href="json.html">json.html</a></li>
+					</ul>
+				</li>
+				<li class="USUARIO">
+					Angular JS
+					<ul>
+						<li><a href="https://www.w3schools.com/angular/">https://www.w3schools.com/angular/</a></li>
 					</ul>
 				</li>
 			</ul>
         </section>
-		<section>
-			<a class="button" href="score.php">Puntos</a>
-		</section>
     </body>
 </html>

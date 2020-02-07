@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.getJSON demo</title>
+  <style>
+  img {
+    height: 100px;
+  }
+section{
+	display:block;
+	height: 400px;
+}
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+
+<section>
+<div id="images"></div>
+<script>
+(function() {
+  var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+  $.getJSON( flickerAPI, {
+    // Criteros de busqueda
+    tags: "China",
+    tagmode: "any",
+    format: "json"
+  })
+    .done(function( data ) {
+      $.each( data.items, function( i, item ) {
+        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+        // numero de fotos
+        if ( i === 10 ) {
+          return false;
+        }
+      });
+    });
+})();
+</script>
+</section>
+<br>
+<p>(function() {
+  var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+  $.getJSON( flickerAPI, {
+    // Criteros de busqueda
+    tags: "China",
+    tagmode: "any",
+    format: "json"
+  })
+    .done(function( data ) {
+      $.each( data.items, function( i, item ) {
+        $( "&lt;img&gt;" ).attr( "src", item.media.m ).appendTo( "#images" );
+        // numero de fotos
+        if ( i === 10 ) {
+          return false;
+        }
+      });
+    });
+})();
+</p>
+ 
+</body>
+</html>
