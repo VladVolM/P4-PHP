@@ -1,0 +1,5 @@
+La separación del sistema en front-ends y back-ends es un tipo de abstracción que ayuda a mantener las diferentes partes del sistema separadas.
+
+El Frontend se enfoca en el usuario, con lo que podemos interactuar y lo que vemos. Utiliza HTML, CSS y JAVASCRIPT. Para un frontend la creatividad es el recurso más valioso, ya que tendrá que tomar fuentes, colores, imágenes y todos lo recursos de los cuales disponga para crear sitios agradables que se vean bien en todos los dispositivos y resoluciones.
+
+El Backend enfocado en hacer que todo lo que está detrás de un sitio web funcione correctamente, para crear sitios dinámicos. Utiliza PHP, Ruby, Python, JavaScript, SQL, MongoDb, MySQL, etc. Como en muchos sitios la información se encuentra en constante cambio o actualización, una buena capacidad de respuesta y una velocidad óptima del sitio son responsabilidades que un backend debe de afrontar.
