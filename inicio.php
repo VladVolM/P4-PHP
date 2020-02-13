@@ -8,6 +8,13 @@
         <link rel="Shortcut Icon" href="Imagenes/icono.png">
     </head>
     <body>
+<?php
+$myfile = fopen("Menu.txt", "r") or die("Unable to open file!");
+
+while(!feof($myfile)){
+echo fgets($myfile);
+}
+?>
 		<section>
 			<a class="button" href="form.php">Registrarse como jugador</a>
 		</section>
