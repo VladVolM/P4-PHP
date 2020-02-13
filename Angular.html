@@ -4,10 +4,40 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title id="title">Angular</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<style>
+.ng-hide {
+  height: 0;
+  width: 0;
+  background-color: transparent;
+  top:-200px;
+  left: 200px;
+}
+</style>
     </head>
     <body>
+		<nav></nav>
+		<div class="container-fluid">
 	<p>
 Es un framework para aplicaciones web desarrollado en TypeScript, de código abierto, mantenido por Google, que se utiliza para crear y mantener aplicaciones web de una sola página. Su objetivo es aumentar las aplicaciones basadas en navegador con capacidad de Modelo Vista Controlador (MVC), en un esfuerzo para hacer que el desarrollo y las pruebas sean más fáciles.
 	</p>
+<div ng-app="">
+ 
+<h1>Hide: <input type="checkbox" ng-model="myCheck"></h1>
+
+<div ng-hide="myCheck">
+<p>Frase : <input type="text" ng-model="name" placeholder="Enter name here"><code style="font-size: 30px;">{{name}}</code></p>
+
+</div>
+
+
+
+
+</div>
+		</div>
 	</body>
 </html>

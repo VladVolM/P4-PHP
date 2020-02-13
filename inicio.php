@@ -11,54 +11,106 @@
 		<section>
 			<a class="button" href="form.php">Registrarse como jugador</a>
 		</section>
-<?php /*
-$dbconn = pg_connect("host=localhost port=5432 dbname=postgres user=postgres password=example") or die('Could not connect: ' . pg_last_error());
+<?php 
+
+function alert($msg) {
+    echo "<script type='text/javascript'>alert('$msg');</script>";
+}
+
+$conn = mysqli_connect("mysql", "root", "1234", "db");
+
+if (!$conn) {
+    echo "Error: Unable to connect to MySQL." . PHP_EOL;
+    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+    exit;
+}
+
 
 // Performing SQL query
-$query = 'SELECT * FROM ATable';
-$query2 = 'create table ATable(
-	codigo 				integer,
-	nombre 				varchar(30),
-	fecha			 	date,
-	valor	 			integer,
-	constraint PK_COD primary key (codigo),
-	constraint FK_COD foreign  key (codigo) references BTable
-	);';
-
-$query3 = 'create table BTable(
-	codigo				integer,
-	valor	 			varchar(20),
-	constraint PK_COD2 primary key (codigo)
-	);';
-
-$query4 ='insert into BTable values( 0 , \'Volo\', \'17/3/1999\',0);';
-
-$query5 ='insert into DTable values(0, \'Normal\');';
 
 
-$result = pg_query($query3) or die('Query failed: ' . pg_last_error());
-$result = pg_query($query2) or die('Query failed: ' . pg_last_error());
-$result = pg_query($query5) or die('Query failed: ' . pg_last_error());
-$result = pg_query($query4) or die('Query failed: ' . pg_last_error());
-$result = pg_query($query) or die('Query failed: ' . pg_last_error());
+$query1 = "create table BTable(
+codigo int(2) PRIMARY KEY,
+valor varchar(20)
+)";
 
-echo "<table>\n";
-while ($line = pg_fetch_array($result, null, PGSQL_ASSOC)) {
-    echo "\t<tr>\n";
-    foreach ($line as $col_value) {
-        echo "\t\t<td>$col_value</td>\n";
+$query2 = "create table ATable(
+codigo int(3) PRIMARY KEY,
+nombre varchar(30),
+fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+valor int(2),
+FOREIGN KEY (valor) REFERENCES BTable(codigo)
+)";
+
+$query3 ="insert into BTable values(0, 'Normal')";
+
+$query4 ="insert into ATable values( 0 , 'Volo', '1999/03/17',0)";
+
+$query5 = "SELECT * FROM ATable";
+
+mysqli_query($conn, "drop table ATable");
+mysqli_query($conn, "drop table BTable");
+
+alert('01');
+if (mysqli_query($conn, $query1)) {
+alert('02');
+    if (mysqli_query($conn, $query2)) {
+alert('03');
+    	if (mysqli_query($conn, $query3)) {
+alert('04');
+    		if (mysqli_query($conn, $query4)) {
+
+    				
+	alert('1');
+
+$result = mysqli_query($conn, $query5);
+	alert('2');
+if (mysqli_num_rows($result) > 0) {
+	alert('3');
+    while($row = mysqli_fetch_assoc($result)) {
+		alert('4');
+
+		echo "<table>";
+
+			echo "<tr>";
+
+				echo "<td>".$row["codigo"]."</td>";
+				echo "<td>".$row["nombre"]."</td>";
+				echo "<td>".$row["fecha"]."</td>";
+				echo "<td>".$row["valor"]."</td>";
+
+			echo "</tr>";
+
+		echo "</table>";
+
     }
-    echo "\t</tr>\n";
+} else {
+    alert('No se ha obtenido datos');
 }
-echo "</table>\n";
 
-// Free resultset
-pg_free_result($result);
 
-// Closing connection
-pg_close($dbconn);
 
-*/
+
+
+			} else {
+				alert('No ha podido insertar datos en la segunda tabla ');
+			}
+		} else {
+			alert('No ha podido insertar datos en la primera tabla ');
+		}
+	} else {
+		alert('No ha podido cargarse la segunda tabla ');
+	}
+} else {
+    alert('No ha podido cargarse la primera tabla ');
+}
+
+
+alert('exit ');
+
+$conn->close();
+
 ?>
 
 		<section>
