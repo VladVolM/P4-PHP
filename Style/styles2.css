@@ -1,0 +1,215 @@
+nav{
+	border-color: #191C26;
+	position:relative;
+	z-index:990;
+}
+
+li{
+	width:100%;
+}
+
+.ulid {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+#menu{
+	display:none;
+}
+
+.menuCSS3 a {
+	display: block;
+	padding: 2em;
+	background-color: rgb(248, 248, 248);
+	text-decoration: none;
+	color: #191C26;
+}
+
+.menuCSS3 a:hover {
+	background-color: #CC673B;
+}
+
+.menuCSS3 ul li ul li ul {
+	display: none;
+	z-index:999;
+}
+
+.menuCSS3 ul {
+	z-index:999;
+}
+
+.menuCSS3 ul li ul li a:hover + ul, .menuCSS3 ul li ul li ul:hover {
+	display: block;
+	position:absolute;
+}
+
+label.datos{
+	display: inline-block;
+	width: 120px;
+}
+#texto{
+	display: inline-block;
+	width: 120px;
+	float:left;
+}
+#mensaje {
+	display: inline-block;
+	width: 270px;
+	height: 200px;
+	float:left;
+}
+fieldset {
+	border-style: double;
+}
+
+body {
+	margin: 0%;
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+	background-image: url('../Imagenes/Ladrillo.png');
+}
+
+section{
+	position: absolute;
+	top: 0;
+	padding:1%;
+	background-color: rgba(143, 143, 143, .7);
+	width:96%;
+	margin:1%;
+	
+}
+
+article#descarga{
+	background-image: linear-gradient( rgba(214, 189, 197, 1), rgba(255,100,100,1));
+	padding: 5px;
+}
+
+img.slideshow{
+	height:50%;
+	width:50%;
+	display: block;
+	box-shadow: 5px 5px #888;
+	padding-top: 5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.imagen{
+	float: left;
+	margin: 0px 30px 30px 0px;
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #717171;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #000;
+}
+
+@media only screen and (max-width: 960px){
+
+	.menuCSS3 a {
+		font-size:14px
+	}
+	.ulid {
+		display: block;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	.ulid2{
+		display: inline-block;
+	}
+
+	.oo{
+		float:left;
+	}
+
+	a.oo{
+		width:112px;
+	}
+	.tam{
+		width:112px;
+	}
+	#menu{
+		display:block;
+		height:82;
+		width:176px;
+		background-color: rgb(248, 248, 248);
+		border-radius: 25px 25px 0px 0px;
+	}
+
+	#menuinicio{
+		width:10%;
+		height:10%;
+	}
+
+	#menuinicio li img{
+		width:176px;
+		height:82px;
+	}
+
+	#grupomenu{
+		display:none;
+	}
+
+	#menu:hover + #grupomenu, #grupomenu:hover{
+		display:block;
+		position:absolute;
+	}
+	.menuCSS3 li{
+	width:176px;
+	vertical-align: middle;
+	}
+
+	.menuCSS3 ul li ul li a:hover + ul, .menuCSS3 ul li ul li ul:hover {
+	display: inline-block;
+	position:absolute;
+	}
+
+	section{
+	border-radius: 25px 0px 0px 0px;
+	}
+}
