@@ -18,11 +18,11 @@ echo fgets($myfile);
 }
 ?>
 		<div class="container-fluid">
-			<p>
+			<p class="shadow mb-3">
 		Bootstrap<br>
 Es una <mark>biblioteca multiplataforma o conjunto de herramientas de código abierto</mark> para diseño de sitios y aplicaciones web. Contiene plantillas de diseño con <abbr>tipografía</abbr>, formularios, <kbd>botones</kbd>, cuadros, menús de navegación y <code>otros elementos de diseño</code> basado en HTML y CSS, así como extensiones de JavaScript adicionales. A diferencia de muchos frameworks web, solo se ocupa del desarrollo front-end. 
 			</p>
-			<p>
+			<p class="shadow">
 				Toda esta practica fue diseñada con booststrap
 			</p>
 		</div>

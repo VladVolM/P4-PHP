@@ -39,13 +39,15 @@ $(document).ready(function(){
 });
 </script> 
 		<div class="container-fluid">
-			<p>
+			<p class="shadow mb-3">
 			JQuery<br>
 Es una biblioteca multiplataforma de JavaScript, que permite simplificar la manera de interactuar con los documentos HTML, manipular el árbol DOM, manejar eventos, desarrollar animaciones y agregar interacción con la técnica AJAX a páginas web.
 			</p>
-			<article>Soy un texto que va a desaparecer si me das click</article>
-			<p id="fadable" class="text-white" style="background-color:blue;">Este sufre un fade in and out</p>
-			<div id="boxanimation" class="text-center" style="background:#98bf21;height:20px;width:100px;position:absolute;">Animación</div>
+			<section class="shadow mb-3">
+				<article>Soy un texto que va a desaparecer si me das click</article>
+				<p id="fadable" class="text-white" style="background-color:blue;">Este sufre un fade in and out</p>
+				<div id="boxanimation" class="text-center" style="background:#98bf21;height:20px;width:100px;position:absolute;">Animación</div>
+			</section>
 		</div>
 	</body>
 </html>
