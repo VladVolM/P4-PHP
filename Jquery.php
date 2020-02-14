@@ -10,7 +10,13 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-		<nav></nav>
+<?php
+$myfile = fopen("Menu.txt", "r") or die("Unable to open file!");
+
+while(!feof($myfile)){
+echo fgets($myfile);
+}
+?>
 <script>
 $(document).ready(function(){
   $("article").click(function(){
@@ -34,7 +40,8 @@ $(document).ready(function(){
 </script> 
 		<div class="container-fluid">
 			<p>
-			jQuery es una biblioteca multiplataforma de JavaScript, que permite simplificar la manera de interactuar con los documentos HTML, manipular el árbol DOM, manejar eventos, desarrollar animaciones y agregar interacción con la técnica AJAX a páginas web.
+			JQuery<br>
+Es una biblioteca multiplataforma de JavaScript, que permite simplificar la manera de interactuar con los documentos HTML, manipular el árbol DOM, manejar eventos, desarrollar animaciones y agregar interacción con la técnica AJAX a páginas web.
 			</p>
 			<article>Soy un texto que va a desaparecer si me das click</article>
 			<p id="fadable" class="text-white" style="background-color:blue;">Este sufre un fade in and out</p>

@@ -10,7 +10,13 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-		<nav></nav>
+<?php
+$myfile = fopen("Menu.txt", "r") or die("Unable to open file!");
+
+while(!feof($myfile)){
+echo fgets($myfile);
+}
+?>
 <script>
 var mifuncion = function() {
     var myJSON = '{"name":"John", "age":31, "city":"New York"}';
@@ -24,7 +30,8 @@ $(document).ready(function(){
 </script>
 		<div class="container-fluid">
 			<p>
-		JSON es un formato de texto sencillo para el intercambio de datos. Se trata de un subconjunto de la notación literal de objetos de JavaScript, aunque, debido a su amplia adopción como alternativa a XML, se considera un formato independiente del lenguaje. 
+		JSON<br>
+Es un formato de texto sencillo para el intercambio de datos. Se trata de un subconjunto de la notación literal de objetos de JavaScript, aunque, debido a su amplia adopción como alternativa a XML, se considera un formato independiente del lenguaje. 
 			</p>
 			<p id="action">Se ha guardado unos datos, <code>al dar click a este texto aparecera</code></p>
 			<p id="DATA"class="container bg-secondary text-white">Datos:</p>

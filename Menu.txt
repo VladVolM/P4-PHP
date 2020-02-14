@@ -15,7 +15,7 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="https://getbootstrap.com/">Bootstrap</a>
 					<a class="dropdown-item" href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp">w3schools</a>
-					<a class="dropdown-item" href="Bootstrap.html">Datos</a>
+					<a class="dropdown-item" href="Bootstrap.php">Datos</a>
 				</div>
 			  </li>
 			  <li class="nav-item dropdown">
@@ -24,7 +24,7 @@
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="https://www.w3schools.com/jquery/default.asp">w3schools</a>
-					<a class="dropdown-item" href="Jquery.html">Datos</a>
+					<a class="dropdown-item" href="Jquery.php">Datos</a>
 				</div>
 			  </li>
 			  <li class="nav-item dropdown">
@@ -33,7 +33,7 @@
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="https://www.w3schools.com/js/js_json_intro.asp">w3schools</a>
-				  <a class="dropdown-item" href="Json.html">Datos</a>
+				  <a class="dropdown-item" href="Json.php">Datos</a>
 				  <a class="dropdown-item" href="https://ejemplocodigo.com/ejemplo-php-crear-y-leer-json-de-una-tabla-mysql/">ejemplocodigo</a>
 				</div>
 			  </li>
@@ -51,7 +51,7 @@
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 				  <a class="dropdown-item" href="https://www.w3schools.com/angular/">w3schools</a>
-				  <a class="dropdown-item" href="Angular.html">Datos</a>
+				  <a class="dropdown-item" href="Angular.php">Datos</a>
 				</div>
 			  </li>
 			</ul>

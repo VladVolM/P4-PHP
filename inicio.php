@@ -4,8 +4,10 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title id="title">Inicio</title>
-        <link rel="stylesheet" href="Style/styles.css" />
-        <link rel="Shortcut Icon" href="Imagenes/icono.png">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     </head>
     <body>
 <?php
@@ -15,8 +17,19 @@ while(!feof($myfile)){
 echo fgets($myfile);
 }
 ?>
+		<div class="container-fluid">
 		<section>
-			<a class="button" href="form.php">Registrarse como jugador</a>
+			<article>
+					Author: Volodymyr Molchkov Volkogon<br>
+					He cerado unos enlaces a paginas que describen y enseñan ejemplos de diferentes frameworks.
+			</article>
+			<article class="container-fluid ">
+La separación del sistema en front-ends y back-ends es un tipo de abstracción que ayuda a mantener las diferentes partes del sistema separadas.<br>
+
+El Frontend se enfoca en el usuario, con lo que podemos interactuar y lo que vemos. Utiliza HTML, CSS y JAVASCRIPT. Para un frontend la creatividad es el recurso más valioso, ya que tendrá que tomar fuentes, colores, imágenes y todos lo recursos de los cuales disponga para crear sitios agradables que se vean bien en todos los dispositivos y resoluciones.<br>
+
+El Backend enfocado en hacer que todo lo que está detrás de un sitio web funcione correctamente, para crear sitios dinámicos. Utiliza PHP, Ruby, Python, JavaScript, SQL, MongoDb, MySQL, etc. Como en muchos sitios la información se encuentra en constante cambio o actualización, una buena capacidad de respuesta y una velocidad óptima del sitio son responsabilidades que un backend debe de afrontar.
+			</article>
 		</section>
 <?php 
 
@@ -38,7 +51,7 @@ if (!$conn) {
 
 
 $query1 = "create table BTable(
-codigo int(2) PRIMARY KEY,
+codigo int(1) PRIMARY KEY,
 valor varchar(20)
 )";
 
@@ -46,59 +59,69 @@ $query2 = "create table ATable(
 codigo int(3) PRIMARY KEY,
 nombre varchar(30),
 fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-valor int(2),
+valor int(1),
 FOREIGN KEY (valor) REFERENCES BTable(codigo)
 )";
 
-$query3 ="insert into BTable values(0, 'Normal')";
+$query3 ="insert into BTable values(0, 'Mal')";
 
-$query4 ="insert into ATable values( 0 , 'Volo', '1999/03/17',0)";
+$query4 ="insert into ATable values( 0 , 'Insecticida', '1999/03/17',0)";
 
 $query5 = "SELECT * FROM ATable";
 
 mysqli_query($conn, "drop table ATable");
 mysqli_query($conn, "drop table BTable");
 
-alert('01');
 if (mysqli_query($conn, $query1)) {
-alert('02');
     if (mysqli_query($conn, $query2)) {
-alert('03');
     	if (mysqli_query($conn, $query3)) {
-alert('04');
+			mysqli_query($conn, "insert into BTable values(1, 'Mejorable')");
+			mysqli_query($conn, "insert into BTable values(2, 'Insuficiente')");
+			mysqli_query($conn, "insert into BTable values(3, 'Suficiente')");
+			mysqli_query($conn, "insert into BTable values(4, 'Normal-')");
+			mysqli_query($conn, "insert into BTable values(5, 'Normal')");
+			mysqli_query($conn, "insert into BTable values(6, 'Normal+')");
+			mysqli_query($conn, "insert into BTable values(7, 'Bueno')");
+			mysqli_query($conn, "insert into BTable values(8, 'Increible')");
+			mysqli_query($conn, "insert into BTable values(9, 'Perfecto')");
+
     		if (mysqli_query($conn, $query4)) {
+				mysqli_query($conn, "insert into ATable values( 1 , 'Vehiculo', '2000/08/11',6)");
+				mysqli_query($conn, "insert into ATable values( 2 , 'Resistencia', '2008/05/26',3)");
+				mysqli_query($conn, "insert into ATable values( 3 , 'Durabilidad', '2015/012/02',7)");
 
     				
-	alert('1');
 
 $result = mysqli_query($conn, $query5);
-	alert('2');
 if (mysqli_num_rows($result) > 0) {
-	alert('3');
-    while($row = mysqli_fetch_assoc($result)) {
-		alert('4');
 
-		echo "<table>";
+		echo "<table class='table-striped'>";
+echo "<thead>
+    <tr>
+      <th scope='col'>Código</th>
+      <th scope='col'>Nombre</th>
+      <th scope='col'>Fecha</th>
+      <th scope='col'>Valor</th>
+    </tr>
+  </thead>";
+    while($row = mysqli_fetch_assoc($result)) {
 
 			echo "<tr>";
 
+
 				echo "<td>".$row["codigo"]."</td>";
 				echo "<td>".$row["nombre"]."</td>";
-				echo "<td>".$row["fecha"]."</td>";
+				echo "<td>".substr($row["fecha"],0,10)."</td>";
 				echo "<td>".$row["valor"]."</td>";
 
 			echo "</tr>";
 
+    }
 		echo "</table>";
 
-    }
 } else {
     alert('No se ha obtenido datos');
 }
-
-
-
-
 
 			} else {
 				alert('No ha podido insertar datos en la segunda tabla ');
@@ -113,47 +136,10 @@ if (mysqli_num_rows($result) > 0) {
     alert('No ha podido cargarse la primera tabla ');
 }
 
-
-alert('exit ');
-
+echo mysqli_error($conn);
 $conn->close();
 
 ?>
-
-		<section>
-			<ul>
-				<li class="USUARIO">
-					Bootstrap
-					<ul>
-						<li><a href="https://getbootstrap.com/">https://getbootstrap.com/</a></li>
-						<li><a href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp">https://www.w3schools.com/bootstrap/bootstrap_ver.asp</a></li>
-					</ul>
-				</li>
-				<li class="USUARIO">
-					Jquery
-					<ul>
-						<li><a href="https://www.w3schools.com/jquery/default.asp">https://www.w3schools.com/jquery/default.asp</a></li>
-					</ul>
-				</li>
-				<li class="USUARIO">
-					Json
-					<ul>
-						<li><a href="https://ejemplocodigo.com/ejemplo-php-crear-y-leer-json-de-una-tabla-mysql/">https://ejemplocodigo.com/ejemplo-php-crear-y-leer-json-de-una-tabla-mysql/</a></li>
-					</ul>
-				</li>
-				<li class="USUARIO">
-					Json externo
-					<ul>
-						<li><a href="json.html">json.html</a></li>
-					</ul>
-				</li>
-				<li class="USUARIO">
-					Angular JS
-					<ul>
-						<li><a href="https://www.w3schools.com/angular/">https://www.w3schools.com/angular/</a></li>
-					</ul>
-				</li>
-			</ul>
-        </section>
+		</div>
     </body>
 </html>
