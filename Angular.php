@@ -42,7 +42,7 @@
 				<h1 ng-mouseover="countt = countt + 1" ng-init="countt=0">Hide: <input type="checkbox" ng-model="myCheck"></h1>
 
 				<div ng-hide="myCheck">
-					<p>Frase : <input type="text" ng-model="name" placeholder="Escribe algo"><code style="font-size: 30px;">{{name}}</code></p>
+					<p>Frase : <input type="text" ng-model="name" placeholder="Escribe algo"><br>&nbsp;<code class="text-uppercase"style="font-size: 30px;">{{name}}</code></p>
 					<button ng-click="count = count + 1" ng-init="count=0">{{count}}</button>
 					<h3>Mouse over "Hide" count {{countt}}</h3>
 				</div>

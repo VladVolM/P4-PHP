@@ -17,11 +17,12 @@
 			  </li>
 			  <li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				  Jquery
+				  jQuery
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 				  <a class="dropdown-item" href="Jquery.php">Datos</a>
 				  <a class="dropdown-item" href="https://www.w3schools.com/jquery/default.asp">w3schools</a>
+				  <a class="dropdown-item" href="https://jquery.com/">jQuery</a>
 				</div>
 			  </li>
 			  <li class="nav-item dropdown">
@@ -31,7 +32,8 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 				  <a class="dropdown-item" href="Json.php">Datos</a>
 				  <a class="dropdown-item" href="https://www.w3schools.com/js/js_json_intro.asp">w3schools</a>
-				  <a class="dropdown-item" href="https://ejemplocodigo.com/ejemplo-php-crear-y-leer-json-de-una-tabla-mysql/">ejemplocodigo</a>
+				  <a class="dropdown-item" href="https://ejemplocodigo.com/ejemplo-php-crear-y-leer-json-de-una-tabla-mysql/">EjemploCodigo.com</a>
+				  <a class="dropdown-item" href="https://www.json.org/json-en.html">Json</a>
 				</div>
 			  </li>
 			  <li class="nav-item dropdown">
@@ -39,7 +41,9 @@
 				  Json externo
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				  <a class="dropdown-item" href="json.html">json.html</a>
+				  <a class="dropdown-item" href="json.php">Datos</a>
+				  <a class="dropdown-item" href="https://www.flickr.com/services/api/">Flickr API</a>
+				  <a class="dropdown-item" href="https://jsonapi.org/">Json API</a>
 				</div>
 			  </li>
 			  <li class="nav-item dropdown">
@@ -49,8 +53,23 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 				  <a class="dropdown-item" href="Angular.php">Datos</a>
 				  <a class="dropdown-item" href="https://www.w3schools.com/angular/">w3schools</a>
+				  <a class="dropdown-item" href="https://angularjs.org/">Angular JS</a>
 				</div>
 			  </li>
+
+
+<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  Google Maps
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				  <a class="dropdown-item" href="Google.php">Datos</a>
+				  <a class="dropdown-item" href="https://www.w3schools.com/graphics/google_maps_intro.asp">w3schools</a>
+				  <a class="dropdown-item" href="https://developers.google.com/maps/documentation?hl=es">Google Maps</a>
+				</div>
+			  </li>
+
+
 			</ul>
 		  </div>
 		</nav>

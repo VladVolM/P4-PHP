@@ -18,12 +18,22 @@
 		?>
 		<div class="container-fluid">
 			<p class="shadow mb-3">
-		Bootstrap<br>
-Es una <mark>biblioteca multiplataforma o conjunto de herramientas de código abierto</mark> para diseño de sitios y aplicaciones web. Contiene plantillas de diseño con <abbr>tipografía</abbr>, formularios, <kbd>botones</kbd>, cuadros, menús de navegación y <code>otros elementos de diseño</code> basado en HTML y CSS, así como extensiones de JavaScript adicionales. A diferencia de muchos frameworks web, solo se ocupa del desarrollo front-end. 
+		Google Maps<br>
+Es un servidor de aplicaciones de mapas en la web que pertenece a Alphabet Inc. Ofrece imágenes de mapas desplazables, fotografías por satélite, imágenes a pie de calle con Google Street View, condiciones de tráfico en tiempo real (Google Traffic) y un calculador de rutas. 
 			</p>
-			<p class="shadow">
-				Toda esta practica fue diseñada con booststrap
-			</p>
+			<section>
+				<div id="googleMap" style="width:100%;height:400px;"></div>
+				<script>
+				function myMap() {
+				var mapProp= {
+				  center:new google.maps.LatLng(51.508742,-0.120850),
+				  zoom:5,
+				};
+				var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+				}
+				</script>
+				<script src="https://maps.googleapis.com/maps/api/js?key=&callback=myMap"></script>
+			</section>
 		</div>
 	</body>
 </html>
