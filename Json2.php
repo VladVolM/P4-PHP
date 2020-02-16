@@ -22,19 +22,12 @@
 
     <body>
 
-<?php
-
-$myfile = fopen("Menu.txt", "r") or die("Unable to open file!");
-
-
-
-while(!feof($myfile)){
-
-echo fgets($myfile);
-
-}
-
-?>
+	<?php
+		$myfile = fopen("Menu.txt", "r") or die("Unable to open file!");
+		while(!feof($myfile)){
+			echo fgets($myfile);
+		}
+	?>
 
 <script>
 
@@ -73,6 +66,26 @@ Es un formato de texto sencillo para el intercambio de datos. Se trata de un sub
 				<p id="action">Se ha guardado unos datos, <code>al dar click a este texto aparecera</code></p>
 
 				<p id="DATA"class="container bg-secondary text-white">Datos:</p>
+
+			</section>
+			<section class="shadow mb-3">
+
+				<?php 
+					$data = file_get_content("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp")
+ 					$json = json_decode($data,true);
+					echo "<table class='table table-striped table-bordered text-center shadow'>";
+
+					echo "<thead class='thead-dark'>
+						<tr>
+	  						<th scope='col' colspan='1'>Lugar</th>
+	  						<th scope='col' colspan='3'>Fuerza</th>
+						</tr>
+  						</thead>";
+					for ($i=0;$i<10;$i++){
+						echo "<tr><td>".$json[$i]["properties"]["place"]."</td><td>".$json[$i]["properties"]["mag"]."</td></tr>";
+					}
+					echo "</table>";
+				?>
 
 			</section>
 
