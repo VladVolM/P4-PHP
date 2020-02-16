@@ -30,7 +30,7 @@
 				  Json
 				</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				  <a class="dropdown-item" href="Json.php">Datos</a>
+				  <a class="dropdown-item" href="Json2.php">Datos</a>
 				  <a class="dropdown-item" href="https://www.w3schools.com/js/js_json_intro.asp">w3schools</a>
 				  <a class="dropdown-item" href="https://ejemplocodigo.com/ejemplo-php-crear-y-leer-json-de-una-tabla-mysql/">EjemploCodigo.com</a>
 				  <a class="dropdown-item" href="https://www.json.org/json-en.html">Json</a>
