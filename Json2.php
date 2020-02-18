@@ -71,20 +71,22 @@ Es un formato de texto sencillo para el intercambio de datos. Se trata de un sub
 			<section class="shadow mb-3">
 
 				<?php 
-					$data = file_get_content("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp")
- 					$json = json_decode($data,true);
-					echo "<table class='table table-striped table-bordered text-center shadow'>";
+					//ini_set("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp", 1);
+					//$data = file_get_contents("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp");
+					//var_dump($data);
+ 					//$varjson = json_decode($data,true);
+					//echo "<table class='table table-striped table-bordered text-center shadow'>";
 
-					echo "<thead class='thead-dark'>
-						<tr>
-	  						<th scope='col' colspan='1'>Lugar</th>
-	  						<th scope='col' colspan='3'>Fuerza</th>
-						</tr>
-  						</thead>";
-					for ($i=0;$i<10;$i++){
-						echo "<tr><td>".$json[$i]["properties"]["place"]."</td><td>".$json[$i]["properties"]["mag"]."</td></tr>";
-					}
-					echo "</table>";
+					//echo "<thead class='thead-dark'>
+					//	<tr>
+	  				//		<th scope='col' colspan='1'>Lugar</th>
+	  				//		<th scope='col' colspan='3'>Fuerza</th>
+					//	</tr>
+  					//	</thead>";
+					//for ($i=0;$i<10;$i++){
+					//	echo "<tr><td>".$varjson[$i]["properties"]["place"]."</td><td>".$varjson[$i]["properties"]["mag"]."</td></tr>";
+					//}
+					//echo "</table>";
 				?>
 
 			</section>
